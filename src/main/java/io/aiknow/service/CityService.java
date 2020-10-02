@@ -20,4 +20,32 @@ public class CityService implements ICityService {
 
         return cities;
     }
+
+    @Override
+    public City readCity(Long cityId) {
+
+        City city = repository.findById(cityId).get();
+        return city;
+    }
+
+    @Override
+    public void createCity(City city) {
+
+        repository.save(city);
+    }
+
+    @Override
+    public void updateCity(Long cityId, String name, Integer population) {
+
+        City city = repository.findById(cityId).get();
+        city.setName(name);
+        city.setPopulation(population);
+        repository.save(city);
+    }
+
+    @Override
+    public void deleteCity(Long cityId) {
+
+        repository.deleteById(cityId);
+    }
 }
