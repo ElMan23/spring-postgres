@@ -15,7 +15,7 @@ public class TestCRUD {
     @Test
     public void testCreate() {
 
-        City city = new City(3l, "Milano", 1397457);
+        City city = new City(9l, "Milano", 1397457);
         cityService.createCity(city);
     }
 
